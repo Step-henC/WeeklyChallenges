@@ -92,7 +92,18 @@ namespace ChallengesWithTestsMark8
             {
                 return 0;
             }
-            return numbers.Where(x => x%2 == 0).Sum();
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i]%2 == 0)
+                {
+                    sum += numbers[i];
+                    
+                }
+                
+            }
+            return sum;
+            //return numbers.Where(x => x%2 == 0).Sum();
 
         }
 
