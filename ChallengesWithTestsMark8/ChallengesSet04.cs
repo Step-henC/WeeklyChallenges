@@ -109,18 +109,20 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
-            try
-            {   while (Factorial(number) < 1)
-                {
-                    return number * Factorial(number - 1);
-                }
-            }
-            catch (ArgumentOutOfRangeException)
+
+            if (number < 0)
             {
-                throw new System.ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException();
             }
-            return 0;
-           
+
+            if (number == 0 || number == 1)
+            {
+                return 1;
+            }
+
+            return number * Factorial(number - 1);
+
+
         }
     }
 }
